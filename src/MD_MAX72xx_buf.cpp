@@ -377,6 +377,17 @@ bool MD_MAX72XX::transformBuffer(uint8_t buf, transformType_t ttype)
     break;
 
   //--------------
+  case TRCC: // Transform Rotate Counter-Clockwise
+    for (uint8_t i=0; i<ROW_SIZE; i++)
+      t[i] = getColumn(buf, COL_SIZE-1-i);
+    for (uint8_t i=0; i<COL_SIZE; i++)
+      t[i] = getRow(buf, ROW_SIZE-1-i);
+
+    for (uint8_t i=0; i<ROW_SIZE; i++)
+      setColumn(buf, i, t[i]);
+    break;
+
+  //--------------
   case TINV: // Transform INVert
     for (uint8_t i=0; i<ROW_SIZE; i++)
       _matrix[buf].dig[i] = ~_matrix[buf].dig[i];

@@ -237,6 +237,7 @@ bool MD_MAX72XX::transform(uint8_t startDev, uint8_t endDev, transformType_t tty
     case TSD:   // Transform Shift Down one pixel element
     case TFUD:  // Transform Flip Up to Down
     case TRC:   // Transform Rotate Clockwise
+    case TRCC:   // Transform Rotate Counter-Clockwise
     case TINV:  // Transform INVert
     for (uint8_t buf = startDev; buf <= endDev; buf++)
       transformBuffer(buf, ttype);

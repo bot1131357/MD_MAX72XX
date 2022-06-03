@@ -403,6 +403,7 @@ public:
     TFLR, ///< Transform Flip Left to Right
     TFUD, ///< Transform Flip Up to Down
     TRC,  ///< Transform Rotate Clockwise 90 degrees
+    TRCC,  ///< Transform Rotate Counter-Clockwise 90 degrees
     TINV  ///< Transform INVert (pixels inverted)
   };
 
